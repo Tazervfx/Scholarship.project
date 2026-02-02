@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic University Analysis 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 font-sans">
+    <header class="bg-slate-900 text-white p-10 text-center shadow-xl">
+        <h1 class="text-3xl font-bold tracking-tight">Academic Bridge: Syria-Türkiye 2026</h1>
+        <p class="mt-2 text-slate-400">Data-driven analysis for International Relations placement</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-6">
+        <div class="mb-10 text-center">
+            <label class="block mb-2 text-sm font-medium text-slate-600">Filter by University or Acceptance Rate</label>
+            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search (e.g. Mersin, 85%, etc.)..." 
+            class="w-full p-5 rounded-2xl border-2 border-slate-200 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all text-lg">
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
+            <table class="w-full text-left" id="uniTable">
+                <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase text-xs tracking-wider">
+                    <tr>
+                        <th class="p-5 font-bold">University</th>
+                        <th class="p-5 font-bold">Location / Analysis</th>
+                        <th class="p-5 font-bold text-center">Status</th>
+                    </tr>
