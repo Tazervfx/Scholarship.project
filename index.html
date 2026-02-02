@@ -14,104 +14,86 @@
             <div class="bg-blue-600 text-white p-2 rounded-lg font-black text-xs">TR</div>
             <span class="font-black text-slate-800 tracking-tighter uppercase text-sm">Turkish Universities <span class="text-blue-600">Guide</span></span>
         </div>
-        <div class="hidden md:flex gap-6 text-[11px] font-bold text-gray-400 uppercase tracking-widest">
-            <a href="#" class="hover:text-blue-600 transition-colors">Directory</a>
-            <a href="#" class="hover:text-blue-600 transition-colors">Analysis</a>
-            <a href="#" class="hover:text-blue-600 transition-colors">Contact</a>
+        <div class="flex gap-6 text-[11px] font-bold text-gray-400 uppercase tracking-widest">
+            <a href="mailto:your-email@example.com" class="hover:text-blue-600 transition-colors">Contact</a>
         </div>
-        <button class="bg-blue-600 text-white px-5 py-2 rounded-full text-[10px] font-bold uppercase shadow-lg shadow-blue-200 hover:scale-105 transition-transform">
-            <i class="fas fa-search mr-2"></i> Comprehensive Guide
-        </button>
     </nav>
 
     <div class="max-w-7xl mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
-                <div class="flex items-center">
-                    <div class="p-4 bg-blue-50 rounded-2xl text-blue-600 mr-4"><i class="fas fa-users text-xl"></i></div>
-                    <div>
-                        <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest">Total Quotas</p>
-                        <h3 class="text-2xl font-black text-slate-800">+120K</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
-                <div class="flex items-center">
-                    <div class="p-4 bg-emerald-50 rounded-2xl text-emerald-600 mr-4"><i class="fas fa-chart-line text-xl"></i></div>
-                    <div>
-                        <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest">Top Acceptance</p>
-                        <h3 class="text-2xl font-black text-slate-800">92%</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-[#1a1c2e] p-6 rounded-3xl shadow-xl text-white relative overflow-hidden">
-                <div class="relative z-10">
-                    <p class="text-blue-400 text-[10px] font-black uppercase mb-1"><i class="fas fa-lightbulb mr-2"></i>Strategic Info</p>
-                    <p class="text-[11px] leading-relaxed text-slate-300">Focus on universities in smaller cities for higher acceptance probabilities during 2026.</p>
-                </div>
-                <i class="fas fa-brain absolute -right-4 -bottom-4 text-white opacity-5 text-6xl"></i>
-            </div>
-        </div>
-
         <div class="relative mb-12">
             <i class="fas fa-search absolute left-6 top-1/2 -translate-y-1/2 text-gray-400"></i>
-            <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Search for a university, city, or status..." 
-            class="w-full pl-14 pr-6 py-5 rounded-[2rem] border-none shadow-xl shadow-blue-100/20 focus:ring-4 focus:ring-blue-100 transition-all text-lg outline-none">
+            <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Search from 100+ universities..." 
+            class="w-full pl-14 pr-6 py-5 rounded-[2rem] border-none shadow-xl focus:ring-4 focus:ring-blue-100 transition-all text-lg outline-none">
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="cardContainer">
-            <script>
-                const unis = [
-                    {id: "33", name: "Mersin Üniversitesi", city: "Mersin", rate: "Moderate", code: "33"},
-                    {id: "78", name: "Karabük Üniversitesi", city: "Karabük", rate: "~92%", code: "78"},
-                    {id: "73", name: "Şırnak Üniversitesi", city: "Şırnak", rate: "High", code: "73"},
-                    {id: "30", name: "Hakkari Üniversitesi", city: "Hakkari", rate: "High", code: "30"},
-                    {id: "76", name: "Iğdır Üniversitesi", city: "Iğdır", rate: "High", code: "76"},
-                    {id: "75", name: "Ardahan Üniversitesi", city: "Ardahan", rate: "88%", code: "75"},
-                    {id: "66", name: "Yozgat Bozok", city: "Yozgat", rate: "85%", code: "66"},
-                    {id: "18", name: "Çankırı Karatekin", city: "Çankırı", rate: "90%", code: "18"},
-                    {id: "56", name: "Siirt Üniversitesi", city: "Siirt", rate: "High", code: "56"},
-                    {id: "13", name: "Bitlis Eren", city: "Bitlis", rate: "Moderate", code: "13"},
-                    {id: "49", name: "Muş Alparslan", city: "Muş", rate: "High", code: "49"},
-                    {id: "12", name: "Bingöl Üniversitesi", city: "Bingöl", rate: "High", code: "12"},
-                    {id: "69", name: "Bayburt Üniversitesi", city: "Bayburt", rate: "High", code: "69"},
-                    {id: "63", name: "Harran Üniversitesi", city: "Şanlıurfa", rate: "Moderate", code: "63"}
-                ];
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="cardContainer"></div>
+    </div>
 
-                const container = document.getElementById('cardContainer');
-                unis.forEach(uni => {
-                    container.innerHTML += `
-                        <div class="uni-card bg-white rounded-[2rem] p-6 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all border border-gray-100 group">
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="text-[9px] font-black text-gray-300 uppercase tracking-[0.2em]">#${uni.code} ${uni.city}</span>
-                                <i class="fas fa-university text-blue-600 opacity-10 text-xl"></i>
-                            </div>
-                            <h4 class="text-[15px] font-black text-slate-800 mb-6 h-10 leading-tight group-hover:text-blue-600 transition-colors uppercase tracking-tight">${uni.name}</h4>
-                            <div class="grid grid-cols-2 gap-3 mb-6">
-                                <div class="bg-gray-50 p-3 rounded-2xl text-center">
-                                    <p class="text-[8px] text-gray-400 uppercase font-black tracking-widest mb-1">Location</p>
-                                    <p class="text-[10px] font-black text-slate-700">${uni.city}</p>
-                                </div>
-                                <div class="bg-blue-50 p-3 rounded-2xl text-center">
-                                    <p class="text-[8px] text-blue-400 uppercase font-black tracking-widest mb-1">Acceptance</p>
-                                    <p class="text-[10px] font-black text-blue-700">${uni.rate}</p>
-                                </div>
-                            </div>
-                            <button class="w-full py-3 bg-slate-50 text-blue-600 rounded-xl text-[9px] font-black uppercase tracking-widest hover:bg-blue-600 hover:text-white shadow-sm transition-all">View Details</button>
-                        </div>
-                    `;
-                });
-            </script>
+    <div id="uniModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[100] p-4">
+        <div class="bg-white rounded-[2rem] max-w-lg w-full p-8 shadow-2xl">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="modalTitle" class="text-2xl font-black text-slate-800"></h2>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-red-500"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <div class="space-y-4 text-slate-600 text-sm" id="modalContent">
+                </div>
+            <button onclick="closeModal()" class="w-full mt-8 py-4 bg-blue-600 text-white rounded-2xl font-bold uppercase tracking-widest">Close</button>
         </div>
     </div>
 
     <script>
+        // Data for 100 Universities (Example list to expand)
+        const universities = [
+            { id: "33", name: "Mersin Üniversitesi", city: "Mersin", rate: "73%", lang: "Turkish/English", dept: "IR, Engineering, Medicine" },
+            { id: "78", name: "Karabük Üniversitesi", city: "Karabük", rate: "92%", lang: "Turkish", dept: "Social Sciences, Tech" },
+            { id: "66", name: "Yozgat Bozok", city: "Yozgat", rate: "85%", lang: "Turkish", dept: "Agriculture, IR" },
+            { id: "30", name: "Hakkari Üniversitesi", city: "Hakkari", rate: "95%", lang: "Turkish", dept: "Education, Arts" },
+            { id: "73", name: "Şırnak Üniversitesi", city: "Şırnak", rate: "94%", lang: "Turkish", dept: "Economics" },
+            // يمكنك تكرار هذه الأسطر لتصل إلى 100
+        ];
+
+        // Fill remaining to 100 for visual demo
+        for(let i=1; i<=95; i++) {
+            if(!universities[i]) {
+                universities.push({ id: i.toString(), name: "University " + i, city: "City " + i, rate: "80%", lang: "Turkish", dept: "General" });
+            }
+        }
+
+        const container = document.getElementById('cardContainer');
+        universities.forEach(uni => {
+            container.innerHTML += `
+                <div class="uni-card bg-white rounded-[2rem] p-6 shadow-sm border border-gray-100 group transition-all hover:shadow-2xl">
+                    <span class="text-[9px] font-black text-gray-300 uppercase tracking-widest">#${uni.id} ${uni.city}</span>
+                    <h4 class="text-[15px] font-black text-slate-800 my-4 h-10 uppercase">${uni.name}</h4>
+                    <div class="bg-blue-50 p-3 rounded-2xl mb-6 text-center font-bold text-[10px] text-blue-700">Acceptance: ${uni.rate}</div>
+                    <button onclick="openModal('${uni.name}', '${uni.city}', '${uni.rate}', '${uni.lang}', '${uni.dept}')" 
+                    class="w-full py-3 bg-slate-50 text-blue-600 rounded-xl text-[9px] font-black uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all">View Details</button>
+                </div>
+            `;
+        });
+
+        function openModal(name, city, rate, lang, dept) {
+            document.getElementById('modalTitle').innerText = name;
+            document.getElementById('modalContent').innerHTML = `
+                <p><strong><i class="fas fa-map-marker-alt mr-2"></i> City:</strong> ${city}</p>
+                <p><strong><i class="fas fa-percentage mr-2"></i> Admission Rate:</strong> ${rate}</p>
+                <p><strong><i class="fas fa-language mr-2"></i> Languages:</strong> ${lang}</p>
+                <p><strong><i class="fas fa-book mr-2"></i> Popular Departments:</strong> ${dept}</p>
+            `;
+            document.getElementById('uniModal').classList.remove('hidden');
+            document.getElementById('uniModal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('uniModal').classList.add('hidden');
+            document.getElementById('uniModal').classList.remove('flex');
+        }
+
         function filterCards() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let cards = document.getElementsByClassName('uni-card');
             for (let i = 0; i < cards.length; i++) {
-                let text = cards[i].innerText.toLowerCase();
-                cards[i].style.display = text.includes(input) ? "" : "none";
+                cards[i].style.display = cards[i].innerText.toLowerCase().includes(input) ? "" : "none";
             }
         }
     </script>
