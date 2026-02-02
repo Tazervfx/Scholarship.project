@@ -33,7 +33,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; }
   </a>
 </nav>
 
-<!-- HEADER -->
+
 <div class="max-w-6xl mx-auto px-6 py-10 space-y-10">
 
   <div class="bg-white p-8 rounded-3xl border border-gray-100">
@@ -96,17 +96,37 @@ new Chart(document.getElementById('rankChart'), {
   }
 });
 
-// HUMANIZED DATA
-const universities = [
-  { name: "Istanbul University", city: "Istanbul", chance: "Competitive", quota: "Low", note: "Strong reputation, limited spots" },
-  { name: "Ankara University", city: "Ankara", chance: "Competitive", quota: "Low", note: "Better odds outside medicine" },
-  { name: "Mersin University", city: "Mersin", chance: "Moderate", quota: "Medium", note: "Good balance overall" },
-  { name: "Karabük University", city: "Karabük", chance: "High", quota: "Very High", note: "Common choice for internationals" },
-  { name: "Yozgat Bozok University", city: "Yozgat", chance: "High", quota: "High", note: "Safer option if flexible" },
-  { name: "Hakkari University", city: "Hakkari", chance: "Very High", quota: "High", note: "Location is main downside" },
-  { name: "Atatürk University", city: "Erzurum", chance: "High", quota: "High", note: "Large quotas, cold city" },
-  { name: "Giresun University", city: "Giresun", chance: "High", quota: "High", note: "Decent mid-tier choice" }
+// 
+  const universities = [
+  { name: "Istanbul University", city: "Istanbul", chance: "Competitive", quota: "Low", note: "Prestige name, limited spots" },
+  { name: "Ankara University", city: "Ankara", chance: "Competitive", quota: "Low", note: "Better chances outside health fields" },
+  { name: "Boğaziçi University", city: "Istanbul", chance: "Very Competitive", quota: "Very Low", note: "Extremely difficult for internationals" },
+  { name: "Middle East Technical University (METU)", city: "Ankara", chance: "Very Competitive", quota: "Low", note: "Strong English programs" },
+
+  { name: "Hacettepe University", city: "Ankara", chance: "Competitive", quota: "Low", note: "Medicine is highly selective" },
+  { name: "Ege University", city: "Izmir", chance: "Moderate", quota: "Medium", note: "Solid public university" },
+  { name: "Dokuz Eylül University", city: "Izmir", chance: "Moderate", quota: "Medium", note: "Large student population" },
+
+  { name: "Mersin University", city: "Mersin", chance: "Moderate", quota: "Medium", note: "Balanced option for internationals" },
+  { name: "Karabük University", city: "Karabük", chance: "High", quota: "Very High", note: "Very common choice" },
+  { name: "Sakarya University", city: "Sakarya", chance: "Moderate", quota: "High", note: "Engineering has better odds" },
+
+  { name: "Atatürk University", city: "Erzurum", chance: "High", quota: "High", note: "Cold city, large quotas" },
+  { name: "Van Yüzüncü Yıl University", city: "Van", chance: "High", quota: "High", note: "Good fallback option" },
+  { name: "Gaziantep University", city: "Gaziantep", chance: "Moderate", quota: "High", note: "Strong regional reputation" },
+
+  { name: "Giresun University", city: "Giresun", chance: "High", quota: "High", note: "Quiet city, safer choice" },
+  { name: "Ordu University", city: "Ordu", chance: "High", quota: "High", note: "Limited program variety" },
+  { name: "Yozgat Bozok University", city: "Yozgat", chance: "High", quota: "High", note: "Often chosen for safety" },
+
+  { name: "Bartın University", city: "Bartın", chance: "High", quota: "High", note: "Small city, simple lifestyle" },
+  { name: "Kastamonu University", city: "Kastamonu", chance: "High", quota: "High", note: "Decent humanities programs" },
+  { name: "Sinop University", city: "Sinop", chance: "High", quota: "High", note: "Very small city" },
+
+  { name: "Dicle University", city: "Diyarbakır", chance: "High", quota: "High", note: "Large campus, mixed perception" },
+  { name: "Harran University", city: "Şanlıurfa", chance: "High", quota: "High", note: "Mostly Turkish-taught programs" }
 ];
+
 
 const container = document.getElementById('cardContainer');
 
@@ -156,4 +176,36 @@ function filterCards() {
 
 </body>
 </html>
+
+<!-- CONTACT -->
+<div class="max-w-4xl mx-auto px-6 py-12">
+  <div class="bg-white border border-gray-100 rounded-3xl p-8">
+    <h3 class="text-xl font-black mb-4">Contact</h3>
+    <p class="text-sm text-gray-600 mb-6">
+      If you have questions or want to suggest corrections, you can reach me here.
+    </p>
+
+    <div class="space-y-4 text-sm">
+      <p>
+        <i class="fas fa-envelope mr-2 text-gray-400"></i>
+        Email:
+        <a href="mailto:yourname@email.com" class="text-blue-600 hover:underline">
+          yourname@email.com
+        </a>
+      </p>
+
+      <p>
+        <i class="fas fa-phone mr-2 text-gray-400"></i>
+        WhatsApp:
+        <a href="https://wa.me/963XXXXXXXXX" target="_blank" class="text-blue-600 hover:underline">
+          +963 XXX XXX XXX
+        </a>
+      </p>
+    </div>
+
+    <p class="text-xs text-gray-400 mt-6">
+      This project is informational only and not affiliated with any university.
+    </p>
+  </div>
+</div>
 
