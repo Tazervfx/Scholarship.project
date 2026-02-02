@@ -7,96 +7,111 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-[#f8f9fc] font-sans">
+
+    <nav class="bg-white border-b border-gray-100 py-4 px-8 flex justify-between items-center shadow-sm sticky top-0 z-50">
+        <div class="flex items-center gap-2">
+            <div class="bg-blue-600 text-white p-2 rounded-lg font-black text-xs">TR</div>
+            <span class="font-black text-slate-800 tracking-tighter uppercase text-sm">Turkish Universities <span class="text-blue-600">Guide</span></span>
+        </div>
+        <div class="hidden md:flex gap-6 text-[11px] font-bold text-gray-400 uppercase tracking-widest">
+            <a href="#" class="hover:text-blue-600 transition-colors">Directory</a>
+            <a href="#" class="hover:text-blue-600 transition-colors">Analysis</a>
+            <a href="#" class="hover:text-blue-600 transition-colors">Contact</a>
+        </div>
+        <button class="bg-blue-600 text-white px-5 py-2 rounded-full text-[10px] font-bold uppercase shadow-lg shadow-blue-200 hover:scale-105 transition-transform">
+            <i class="fas fa-search mr-2"></i> Comprehensive Guide
+        </button>
+    </nav>
 
     <div class="max-w-7xl mx-auto px-4 py-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-blue-500">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
                 <div class="flex items-center">
-                    <div class="p-3 bg-blue-50 rounded-lg text-blue-500 mr-4"><i class="fas fa-users text-xl"></i></div>
+                    <div class="p-4 bg-blue-50 rounded-2xl text-blue-600 mr-4"><i class="fas fa-users text-xl"></i></div>
                     <div>
-                        <p class="text-gray-500 text-sm uppercase font-bold tracking-wider">Total Quotas</p>
+                        <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest">Total Quotas</p>
                         <h3 class="text-2xl font-black text-slate-800">+120K</h3>
                     </div>
                 </div>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-emerald-500">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
                 <div class="flex items-center">
-                    <div class="p-3 bg-emerald-50 rounded-lg text-emerald-500 mr-4"><i class="fas fa-check-circle text-xl"></i></div>
+                    <div class="p-4 bg-emerald-50 rounded-2xl text-emerald-600 mr-4"><i class="fas fa-chart-line text-xl"></i></div>
                     <div>
-                        <p class="text-gray-500 text-sm uppercase font-bold tracking-wider">Top Accept. Rate</p>
+                        <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest">Top Acceptance</p>
                         <h3 class="text-2xl font-black text-slate-800">92%</h3>
                     </div>
                 </div>
             </div>
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-lg text-white">
-                <p class="text-indigo-300 text-xs font-bold uppercase mb-2"><i class="fas fa-lightbulb mr-2"></i>Strategic Info</p>
-                <p class="text-sm leading-tight text-gray-100">Focus on universities in smaller cities for higher acceptance probabilities during the 2026 cycle.</p>
+            <div class="bg-[#1a1c2e] p-6 rounded-3xl shadow-xl text-white relative overflow-hidden">
+                <div class="relative z-10">
+                    <p class="text-blue-400 text-[10px] font-black uppercase mb-1"><i class="fas fa-lightbulb mr-2"></i>Strategic Info</p>
+                    <p class="text-[11px] leading-relaxed text-slate-300">Focus on universities in smaller cities for higher acceptance probabilities during 2026.</p>
+                </div>
+                <i class="fas fa-brain absolute -right-4 -bottom-4 text-white opacity-5 text-6xl"></i>
             </div>
         </div>
 
         <div class="relative mb-12">
             <i class="fas fa-search absolute left-6 top-1/2 -translate-y-1/2 text-gray-400"></i>
-            <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Search for a university, city, or specialty..." 
-            class="w-full pl-14 pr-6 py-5 rounded-2xl border-none shadow-xl focus:ring-4 focus:ring-blue-200 transition-all text-lg outline-none">
+            <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Search for a university, city, or status..." 
+            class="w-full pl-14 pr-6 py-5 rounded-[2rem] border-none shadow-xl shadow-blue-100/20 focus:ring-4 focus:ring-blue-100 transition-all text-lg outline-none">
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="cardContainer">
-            
-            <div class="uni-card bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all border border-gray-100">
-                <div class="flex justify-between items-start mb-4">
-                    <span class="text-xs font-bold text-gray-400">#33 Mersin</span>
-                    <i class="fas fa-university text-blue-500 opacity-20 text-2xl"></i>
-                </div>
-                <h4 class="text-lg font-black text-slate-800 mb-4 h-12">Mersin Üniversitesi</h4>
-                <div class="grid grid-cols-2 gap-2 mb-4">
-                    <div class="bg-gray-50 p-3 rounded-xl text-center">
-                        <p class="text-[10px] text-gray-400 uppercase font-bold">Location</p>
-                        <p class="text-xs font-bold text-slate-700">Mersin</p>
-                    </div>
-                    <div class="bg-emerald-50 p-3 rounded-xl text-center">
-                        <p class="text-[10px] text-emerald-400 uppercase font-bold">Quota</p>
-                        <p class="text-xs font-bold text-emerald-700">Moderate</p>
-                    </div>
-                </div>
-                <button class="w-full py-3 bg-slate-50 text-blue-600 rounded-xl text-xs font-bold hover:bg-blue-600 hover:text-white transition-colors">VIEW DETAILS</button>
-            </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="cardContainer">
+            <script>
+                const unis = [
+                    {id: "33", name: "Mersin Üniversitesi", city: "Mersin", rate: "Moderate", code: "33"},
+                    {id: "78", name: "Karabük Üniversitesi", city: "Karabük", rate: "~92%", code: "78"},
+                    {id: "73", name: "Şırnak Üniversitesi", city: "Şırnak", rate: "High", code: "73"},
+                    {id: "30", name: "Hakkari Üniversitesi", city: "Hakkari", rate: "High", code: "30"},
+                    {id: "76", name: "Iğdır Üniversitesi", city: "Iğdır", rate: "High", code: "76"},
+                    {id: "75", name: "Ardahan Üniversitesi", city: "Ardahan", rate: "88%", code: "75"},
+                    {id: "66", name: "Yozgat Bozok", city: "Yozgat", rate: "85%", code: "66"},
+                    {id: "18", name: "Çankırı Karatekin", city: "Çankırı", rate: "90%", code: "18"},
+                    {id: "56", name: "Siirt Üniversitesi", city: "Siirt", rate: "High", code: "56"},
+                    {id: "13", name: "Bitlis Eren", city: "Bitlis", rate: "Moderate", code: "13"},
+                    {id: "49", name: "Muş Alparslan", city: "Muş", rate: "High", code: "49"},
+                    {id: "12", name: "Bingöl Üniversitesi", city: "Bingöl", rate: "High", code: "12"},
+                    {id: "69", name: "Bayburt Üniversitesi", city: "Bayburt", rate: "High", code: "69"},
+                    {id: "63", name: "Harran Üniversitesi", city: "Şanlıurfa", rate: "Moderate", code: "63"}
+                ];
 
-            <div class="uni-card bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all border border-gray-100">
-                <div class="flex justify-between items-start mb-4">
-                    <span class="text-xs font-bold text-gray-400">#78 Karabük</span>
-                    <i class="fas fa-university text-blue-500 opacity-20 text-2xl"></i>
-                </div>
-                <h4 class="text-lg font-black text-slate-800 mb-4 h-12">Karabük Üniversitesi</h4>
-                <div class="grid grid-cols-2 gap-2 mb-4">
-                    <div class="bg-gray-50 p-3 rounded-xl text-center">
-                        <p class="text-[10px] text-gray-400 uppercase font-bold">Location</p>
-                        <p class="text-xs font-bold text-slate-700">Karabük</p>
-                    </div>
-                    <div class="bg-emerald-50 p-3 rounded-xl text-center">
-                        <p class="text-[10px] text-emerald-400 uppercase font-bold">Acceptance</p>
-                        <p class="text-xs font-bold text-emerald-700">~92%</p>
-                    </div>
-                </div>
-                <button class="w-full py-3 bg-slate-50 text-blue-600 rounded-xl text-xs font-bold hover:bg-blue-600 hover:text-white transition-colors">VIEW DETAILS</button>
-            </div>
-
-            </div>
+                const container = document.getElementById('cardContainer');
+                unis.forEach(uni => {
+                    container.innerHTML += `
+                        <div class="uni-card bg-white rounded-[2rem] p-6 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all border border-gray-100 group">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="text-[9px] font-black text-gray-300 uppercase tracking-[0.2em]">#${uni.code} ${uni.city}</span>
+                                <i class="fas fa-university text-blue-600 opacity-10 text-xl"></i>
+                            </div>
+                            <h4 class="text-[15px] font-black text-slate-800 mb-6 h-10 leading-tight group-hover:text-blue-600 transition-colors uppercase tracking-tight">${uni.name}</h4>
+                            <div class="grid grid-cols-2 gap-3 mb-6">
+                                <div class="bg-gray-50 p-3 rounded-2xl text-center">
+                                    <p class="text-[8px] text-gray-400 uppercase font-black tracking-widest mb-1">Location</p>
+                                    <p class="text-[10px] font-black text-slate-700">${uni.city}</p>
+                                </div>
+                                <div class="bg-blue-50 p-3 rounded-2xl text-center">
+                                    <p class="text-[8px] text-blue-400 uppercase font-black tracking-widest mb-1">Acceptance</p>
+                                    <p class="text-[10px] font-black text-blue-700">${uni.rate}</p>
+                                </div>
+                            </div>
+                            <button class="w-full py-3 bg-slate-50 text-blue-600 rounded-xl text-[9px] font-black uppercase tracking-widest hover:bg-blue-600 hover:text-white shadow-sm transition-all">View Details</button>
+                        </div>
+                    `;
+                });
+            </script>
+        </div>
     </div>
 
     <script>
         function filterCards() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let cards = document.getElementsByClassName('uni-card');
-
             for (let i = 0; i < cards.length; i++) {
-                let title = cards[i].getElementsByTagName('h4')[0].innerText.toLowerCase();
-                let info = cards[i].innerText.toLowerCase();
-                if (title.includes(input) || info.includes(input)) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
+                let text = cards[i].innerText.toLowerCase();
+                cards[i].style.display = text.includes(input) ? "" : "none";
             }
         }
     </script>
