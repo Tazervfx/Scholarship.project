@@ -3,120 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic University Analysis 2026</title>
+    <title>Turkish Universities Guide 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-slate-50 font-sans text-slate-900">
+<body class="bg-gray-100 font-sans">
 
-    <header class="bg-indigo-950 text-white p-12 text-center shadow-2xl relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-        <h1 class="text-4xl font-extrabold tracking-tight relative z-10">Strategic University Placement 2026</h1>
-        <p class="mt-3 text-indigo-200 text-lg italic relative z-10">"Analyzing 120K+ Foreign Student Quotas for Global Success"</p>
-    </header>
-
-    <main class="max-w-6xl mx-auto p-8">
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div class="md:col-span-2">
-                <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search by university, city, or success rate..." 
-                class="w-full p-6 rounded-3xl border-0 shadow-lg ring-1 ring-slate-200 focus:ring-4 focus:ring-indigo-500 outline-none transition-all text-xl">
-            </div>
-            <div class="bg-indigo-100 p-6 rounded-3xl flex items-center justify-center shadow-inner">
-                <div class="text-center">
-                    <span class="block text-2xl font-bold text-indigo-900">120K+</span>
-                    <span class="text-xs uppercase tracking-widest text-indigo-700 font-bold">Total Foreign Quotas</span>
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-blue-500">
+                <div class="flex items-center">
+                    <div class="p-3 bg-blue-50 rounded-lg text-blue-500 mr-4"><i class="fas fa-users text-xl"></i></div>
+                    <div>
+                        <p class="text-gray-500 text-sm uppercase font-bold tracking-wider">Total Quotas</p>
+                        <h3 class="text-2xl font-black text-slate-800">+120K</h3>
+                    </div>
                 </div>
             </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-emerald-500">
+                <div class="flex items-center">
+                    <div class="p-3 bg-emerald-50 rounded-lg text-emerald-500 mr-4"><i class="fas fa-check-circle text-xl"></i></div>
+                    <div>
+                        <p class="text-gray-500 text-sm uppercase font-bold tracking-wider">Top Accept. Rate</p>
+                        <h3 class="text-2xl font-black text-slate-800">92%</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-lg text-white">
+                <p class="text-indigo-300 text-xs font-bold uppercase mb-2"><i class="fas fa-lightbulb mr-2"></i>Strategic Info</p>
+                <p class="text-sm leading-tight text-gray-100">Focus on universities in smaller cities for higher acceptance probabilities during the 2026 cycle.</p>
+            </div>
         </div>
 
-        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
-            <table class="w-full text-left border-collapse" id="uniTable">
-                <thead class="bg-slate-900 text-slate-100 uppercase text-xs tracking-widest">
-                    <tr>
-                        <th class="p-6">University & City</th>
-                        <th class="p-6">Strategic Analysis</th>
-                        <th class="p-6 text-center">Acceptance Priority</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-100">
-                    <tr class="hover:bg-indigo-50/50 transition-all">
-                        <td class="p-6">
-                            <span class="block font-bold text-lg text-slate-800">Mersin University</span>
-                            <span class="text-sm text-slate-500">Mersin</span>
-                        </td>
-                        <td class="p-6 text-slate-600 text-sm leading-relaxed">
-                            Primary Target for International Relations. Strategic maritime location. Balanced local rank.
-                        </td>
-                        <td class="p-6 text-center">
-                            <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-xl text-xs font-black uppercase">Core Target</span>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-indigo-50/50 transition-all">
-                        <td class="p-6">
-                            <span class="block font-bold text-lg text-slate-800 text-emerald-700">Karabük University</span>
-                            <span class="text-sm text-slate-500">Karabük</span>
-                        </td>
-                        <td class="p-6 text-slate-600 text-sm leading-relaxed">
-                            High acceptance rate (approx. 92%). Ideal for securing a seat in Turkey.
-                        </td>
-                        <td class="p-6 text-center">
-                            <span class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-xl text-xs font-black uppercase">92% Priority</span>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-indigo-50/50 transition-all">
-                        <td class="p-6">
-                            <span class="block font-bold text-lg text-slate-800">Yozgat Bozok</span>
-                            <span class="text-sm text-slate-500">Yozgat</span>
-                        </td>
-                        <td class="p-6 text-slate-600 text-sm leading-relaxed">
-                            Reliable backup. High acceptance rate (85%). Lower competition for IR seats.
-                        </td>
-                        <td class="p-6 text-center">
-                            <span class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-xl text-xs font-black uppercase">85% Safety</span>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-indigo-50/50 transition-all">
-                        <td class="p-6">
-                            <span class="block font-bold text-lg text-slate-800">Kastamonu University</span>
-                            <span class="text-sm text-slate-500">Kastamonu</span>
-                        </td>
-                        <td class="p-6 text-slate-600 text-sm leading-relaxed">
-                            Developing university with rising acceptance rates (>70%). Very high success probability.
-                        </td>
-                        <td class="p-6 text-center">
-                            <span class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-xl text-xs font-black uppercase">High Success</span>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-indigo-50/50 transition-all">
-                        <td class="p-6">
-                            <span class="block font-bold text-lg text-slate-800">Sakarya University</span>
-                            <span class="text-sm text-slate-500">Sakarya</span>
-                        </td>
-                        <td class="p-6 text-slate-600 text-sm leading-relaxed">
-                            Elite research institution. Requires higher academic profile (SAT/YOS).
-                        </td>
-                        <td class="p-6 text-center">
-                            <span class="bg-amber-100 text-amber-700 px-4 py-2 rounded-xl text-xs font-black uppercase">Elite Goal</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="relative mb-12">
+            <i class="fas fa-search absolute left-6 top-1/2 -translate-y-1/2 text-gray-400"></i>
+            <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Search for a university, city, or specialty..." 
+            class="w-full pl-14 pr-6 py-5 rounded-2xl border-none shadow-xl focus:ring-4 focus:ring-blue-200 transition-all text-lg outline-none">
         </div>
 
-        <footer class="mt-12 text-center text-slate-400 text-sm pb-10">
-            &copy; 2026 Strategic Application Tool • Based on 2025 Placement Data
-        </footer>
-    </main>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="cardContainer">
+            
+            <div class="uni-card bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all border border-gray-100">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-xs font-bold text-gray-400">#33 Mersin</span>
+                    <i class="fas fa-university text-blue-500 opacity-20 text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-black text-slate-800 mb-4 h-12">Mersin Üniversitesi</h4>
+                <div class="grid grid-cols-2 gap-2 mb-4">
+                    <div class="bg-gray-50 p-3 rounded-xl text-center">
+                        <p class="text-[10px] text-gray-400 uppercase font-bold">Location</p>
+                        <p class="text-xs font-bold text-slate-700">Mersin</p>
+                    </div>
+                    <div class="bg-emerald-50 p-3 rounded-xl text-center">
+                        <p class="text-[10px] text-emerald-400 uppercase font-bold">Quota</p>
+                        <p class="text-xs font-bold text-emerald-700">Moderate</p>
+                    </div>
+                </div>
+                <button class="w-full py-3 bg-slate-50 text-blue-600 rounded-xl text-xs font-bold hover:bg-blue-600 hover:text-white transition-colors">VIEW DETAILS</button>
+            </div>
 
-    <script>
-        function filterTable() {
-            let input = document.getElementById("searchInput").value.toUpperCase();
-            let tr = document.getElementById("uniTable").getElementsByTagName("tr");
-            for (let i = 1; i < tr.length; i++) {
-                let text = tr[i].innerText.toUpperCase();
-                tr[i].style.display = text.indexOf(input) > -1 ? "" : "none";
-            }
-        }
-    </script>
-</body>
-</html>
+            <div class="uni-card bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all border border-gray-100">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-xs font-bold text-gray-400">#78 Karabük</span>
+                    <i class="fas fa-university text-blue-500 opacity-20 text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-black text-slate-800 mb-4 h-12">
