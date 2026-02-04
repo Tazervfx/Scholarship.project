@@ -312,7 +312,7 @@ function filterCards() {
 document.addEventListener('DOMContentLoaded', () => {
     renderCards(universities);
 
-    // Chart logic inside DOMContentLoaded to avoid null errors
+    // Chart logic inside DOMContentLoaded 
     const ctx = document.getElementById('rankChart').getContext('2d');
     new Chart(ctx, {
         type: 'bar',
