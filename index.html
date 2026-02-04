@@ -4,248 +4,182 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Turkish Universities – Strategic Guide 2026</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .uni-card { transition: all 0.3s ease; border: 1px solid #f1f5f9; }
         .uni-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); border-color: #3b82f6; }
-        .dir-rtl { direction: rtl; }
+        .dir-rtl { direction: rtl; text-align: right; }
     </style>
 </head>
-
 <body class="bg-[#f8fafc] text-slate-900">
 
 <nav class="bg-white border-b border-gray-100 py-4 px-8 flex justify-between items-center sticky top-0 z-50">
   <div class="flex items-center gap-2">
     <div class="bg-blue-600 text-white px-3 py-1 rounded-lg font-black text-xs">TR</div>
-    <span class="font-black text-sm uppercase tracking-tight">
-      Turkish Universities – <span class="text-blue-600">Strategic Guide</span>
-    </span>
+    <span class="font-black text-sm uppercase tracking-tight">Turkish Universities – <span class="text-blue-600">Strategic Guide</span></span>
   </div>
-  <div class="hidden md:block text-[10px] text-gray-400 font-bold uppercase tracking-widest">Data-Driven Analysis • 2026</div>
 </nav>
 
 <div class="max-w-6xl mx-auto px-6 py-10 space-y-10">
-
   <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
-    <h1 class="text-2xl font-black mb-3">Academic Strategic Mapping</h1>
-    <p class="text-sm text-gray-600 leading-relaxed max-w-2xl">
-      This guide ranks universities by <strong>acceptance probability</strong> and <strong>global standing</strong>. 
-      Tier 1 represents elite competition, while Tier 4 offers the highest admission rates for international students.
+    <h1 class="text-2xl font-black mb-3">Academic Strategic Mapping | الخارطة الأكاديمية الاستراتيجية</h1>
+    <p class="text-sm text-gray-600 leading-relaxed max-w-4xl">
+      This guide ranks universities by <strong>acceptance probability</strong> and <strong>global standing</strong>.
+      <br>
+      <span class="dir-rtl block mt-2 font-semibold">يقوم هذا الدليل بتصنيف الجامعات حسب احتمالية القبول والمكانة العالمية.</span>
     </p>
   </div>
 
-  <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
-    <h3 class="text-xs font-black uppercase mb-6 text-gray-400 tracking-widest">Top 5 Global Rankings (Reference)</h3>
-    <div class="h-[200px]">
-        <canvas id="rankChart"></canvas>
-    </div>
-  </div> <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
     <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between">
-        <div class="bg-blue-50 text-blue-600 p-4 rounded-2xl">
-            <i class="fas fa-users text-2xl"></i>
-        </div>
+        <div class="bg-blue-50 text-blue-600 p-4 rounded-2xl"><i class="fas fa-users text-2xl"></i></div>
         <div class="text-right">
-            <p class="text-blue-600 font-bold text-sm mb-1">القدرة الاستيعابية</p>
+            <p class="text-blue-600 font-bold text-sm mb-1">القدرة الاستيعابية | Intake Capacity</p>
             <h3 class="text-3xl font-black text-slate-800">+120K</h3>
-            <p class="text-[10px] text-gray-400 mt-1">إجمالي مقاعد الأجانب (الكوتا) المتاحة هذا العام</p>
         </div>
     </div>
-
     <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between">
-        <div class="bg-green-50 text-green-600 p-4 rounded-2xl">
-            <i class="fas fa-check-circle text-2xl"></i>
-        </div>
+        <div class="bg-green-50 text-green-600 p-4 rounded-2xl"><i class="fas fa-check-circle text-2xl"></i></div>
         <div class="text-right">
-            <p class="text-green-600 font-bold text-sm mb-1">أعلى نسبة قبول</p>
+            <p class="text-green-600 font-bold text-sm mb-1">أعلى نسبة قبول | Highest Accept. Rate</p>
             <h3 class="text-3xl font-black text-slate-800">92%</h3>
-            <p class="text-[10px] text-gray-400 mt-1">في الجامعات النامية (مثل: شرناق، هكاري، كارابوك)</p>
         </div>
-    </div>
-</div>
-
-<div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-xl mb-10 relative overflow-hidden">
-    <div class="relative z-10 flex items-start gap-4">
-        <div class="text-yellow-400 text-2xl mt-1">
-            <i class="fas fa-lightbulb"></i>
-        </div>
-        <div class="text-right dir-rtl w-full">
-            <h4 class="text-yellow-400 font-black text-lg mb-2">معلومة استراتيجية</h4>
-            <p class="text-slate-300 text-sm leading-relaxed">
-                الجامعات ذات <span class="text-green-400 font-bold">نسبة قبول > 70%</span> هي بوابتك الأسرع لتركيا، بينما جامعات <span class="text-blue-400 font-bold">Top 500</span> تتطلب ملفاً أكاديمياً شبه مثالي (SAT 1400+).
-            </p>
-        </div>
-    </div>
-    <div class="absolute -right-10 -bottom-10 text-white opacity-5 text-9xl">
-        <i class="fas fa-graduation-cap"></i>
     </div>
 </div>
 
   <div class="relative">
     <i class="fas fa-search absolute left-6 top-1/2 -translate-y-1/2 text-gray-400"></i>
-    <input
-        id="searchInput"
-        onkeyup="filterCards()"
-        placeholder="Search by name, city, or description..."
-        class="w-full pl-14 pr-8 py-5 rounded-2xl shadow-sm border border-gray-200 outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-    />
+    <input id="searchInput" onkeyup="filterCards()" placeholder="Search by name, city, or description... / ابحث هنا" class="w-full pl-14 pr-8 py-5 rounded-2xl shadow-sm border border-gray-200 outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
   </div>
 
   <div id="cardContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 </div>
 
-<div class="max-w-6xl mx-auto px-6 pb-20">
-    <div class="bg-slate-900 rounded-3xl p-10 text-white flex flex-col md:flex-row justify-between items-center gap-8">
-        <div>
-            <h3 class="text-xl font-black mb-2">Have questions?</h3>
-            <p class="text-slate-400 text-sm">Reach out for academic consultation or corrections.</p>
-        </div>
-        <div class="flex gap-4">
-            <a href="mailto:mhtrfmaynkraft422@gmail.com" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-bold text-sm transition">Email Me</a>
-            <a href="https://wa.me/963956259568" target="_blank" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-xl font-bold text-sm transition">WhatsApp</a>
-        </div>
-    </div>
-</div>
-
 <div id="uniModal" class="fixed inset-0 bg-slate-900/60 hidden items-center justify-center z-[100] p-6 backdrop-blur-sm">
-  <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl scale-up-animation">
+  <div class="bg-white rounded-3xl max-w-2xl w-full p-8 shadow-2xl overflow-y-auto max-h-[90vh]">
     <div class="flex justify-between items-start mb-6">
-      <h2 id="modalTitle" class="font-black text-xl text-slate-800 leading-tight pr-4"></h2>
-      <button onclick="closeModal()" class="text-gray-400 hover:text-red-500 transition">
-        <i class="fas fa-times-circle text-2xl"></i>
-      </button>
+      <h2 id="modalTitle" class="font-black text-xl text-slate-800"></h2>
+      <button onclick="closeModal()" class="text-gray-400 hover:text-red-500"><i class="fas fa-times-circle text-2xl"></i></button>
     </div>
     <div id="modalContent" class="space-y-4"></div>
   </div>
 </div>
 
 <script>
-// ALL UNIVERSITIES DATA
 const universities = [
     // TIER 1
-    { id: 1, name: "Middle East Technical Uni. (ODTÜ)", city: "Ankara", local: 1, global: 269, quota: 350, acceptRate: 5, desc: "الدراسة بالإنجليزية 100%، تتطلب SAT عالٍ جداً.", url: "https://metu.edu.tr" },
-    { id: 2, name: "Boğaziçi Üniversitesi", city: "Istanbul", local: 4, global: 371, quota: 150, acceptRate: 2, desc: "أصعب جامعة حكومية في القبول، نخبة النخبة.", url: "https://bogazici.edu.tr" },
-    { id: 3, name: "İstanbul Teknik Üni. (İTÜ)", city: "Istanbul", local: 2, global: 298, quota: 650, acceptRate: 6, desc: "قلعة الهندسة، تتطلب خلفية رياضية قوية.", url: "https://itu.edu.tr" },
-    { id: 4, name: "Hacettepe Üniversitesi", city: "Ankara", local: 3, global: 571, quota: 400, acceptRate: 4, desc: "الرقم 1 طبياً، التنافس على مقاعد الطب فيها جنوني.", url: "https://hacettepe.edu.tr" },
-    { id: 5, name: "Ankara Üniversitesi", city: "Ankara", local: 5, global: 697, quota: 1800, acceptRate: 12, desc: "الأعرق في العاصمة، قوية في العلوم السياسية.", url: "https://ankara.edu.tr" },
-    { id: 6, name: "İstanbul Üniversitesi", city: "Istanbul", local: 6, global: 628-702, quota: 2500, acceptRate: 15, desc: "جامعة ضخمة، القبول فيها صعب لكن الكوتا كبيرة نسبياً.", url: "https://istanbul.edu.tr" },
-    { id: 93, name: "Galatasaray Üniversitesi", city: "Istanbul", local: 110, global: 2800, quota: 40, acceptRate: 1, desc: "فرانكفونية، مقاعد محدودة جداً (شبه مستحيلة).", url: "https://gsu.edu.tr" },
-    // TIER 2
-    { id: 12, name: "Gebze Teknik Üni.", city: "Kocaeli", local: 12, global: 1150, quota: 300, acceptRate: 10, desc: "معهد تكنولوجيا متقدم، يركز على البحث.", url: "https://gtu.edu.tr" },
-    { id: 13, name: "Yıldız Teknik Üni.", city: "Istanbul", local: 13, global: 1180, quota: 600, acceptRate: 10, desc: "موقع مركزي ومستوى أكاديمي مرموق.", url: "https://yildiz.edu.tr" },
-      { id: 7, name: "Ege Üniversitesi", city: "Izmir", local: 7, global: 900, quota: 2000, acceptRate: 18, desc: "جوهرة إزمير، حرم جامعي متكامل.", url: "https://ege.edu.tr" },
-    { id: 10, name: "Marmara Üniversitesi", city: "Istanbul", local: 10, global: 1050, quota: 1200, acceptRate: 15, desc: "تدرس بـ 4 لغات، منافسة عالية.", url: "https://marmara.edu.tr" },
-    { id: 8, name: "Gazi Üniversitesi", city: "Ankara", local: 8, global: 950, quota: 800, acceptRate: 14, desc: "تاريخية وقوية في الهندسة والتربية.", url: "https://gazi.edu.tr" },
-    { id: 9, name: "Dokuz Eylül Üniversitesi", city: "Izmir", local: 9, global: 1000, quota: 1600, acceptRate: 20, desc: "ممتازة في العلوم الإدارية والطبية.", url: "https://deu.edu.tr" },
-    { id: 11, name: "Erciyes Üniversitesi", city: "Kayseri", local: 11, global: 1100, quota: 2000, acceptRate: 25, desc: "جامعة بحثية قوية جداً وسط الأناضول.", url: "https://erciyes.edu.tr" },
-    { id: 15, name: "Çukurova Üniversitesi", city: "Adana", local: 15, global: 1250, quota: 1900, acceptRate: 22, desc: "حرم جامعي جميل جداً على البحيرة.", url: "https://cu.edu.tr" },
-    // TIER 3
-    { id: 22, name: "Selçuk Üniversitesi", city: "Konya", local: 19, global: 1250, quota: 3500, acceptRate: 40, desc: "مدينة جامعية ضخمة، فرص قبول جيدة جداً.", url: "https://selcuk.edu.tr" },
-    { id: 20, name: "Sakarya Üniversitesi", city: "Sakarya", local: 28, global: 1500, quota: 2500, acceptRate: 35, desc: "قريبة لإسطنبول، وجهة مفضلة للعرب.", url: "https://sakarya.edu.tr" },
-    { id: 17, name: "Bursa Uludağ Üni.", city: "Bursa", local: 22, global: 1350, quota: 2200, acceptRate: 30, desc: "في قلب مدينة الصناعة، تعليم عملي قوي.", url: "https://uludag.edu.tr" },
-    { id: 16, name: "Akdeniz Üniversitesi", city: "Antalya", local: 20, global: 1300, quota: 1300, acceptRate: 25, desc: "السياحة والطب، موقع جغرافي رائع.", url: "https://akdeniz.edu.tr" },
-    { id: 19, name: "Ondokuz Mayıs (OMÜ)", city: "Samsun", local: 25, global: 1450, quota: 3000, acceptRate: 45, desc: "مركز امتحانات YÖS الأكبر، تستقبل الآلاف.", url: "https://omu.edu.tr" },
-    { id: 23, name: "Fırat Üniversitesi", city: "Elazig", local: 17, global: 1038, quota: 2200, acceptRate: 50, desc: "قفزة هائلة في التصنيف، ممتازة تكنولوجياً.", url: "https://firat.edu.tr" },
-    { id: 24, name: "Atatürk Üniversitesi", city: "Erzurum", local: 9, global: 1013, quota: 3500, acceptRate: 55, desc: "عريقة جداً، لكن بعدها الجغرافي يسهل القبول.", url: "https://atauni.edu.tr" },
-    { id: 26, name: "Kocaeli Üniversitesi", city: "Kocaeli", local: 32, global: 1650, quota: 1800, acceptRate: 30, desc: "قوية هندسياً لقربها من المصانع.", url: "https://kocaeli.edu.tr" },
-    { id: 18, name: "Karadeniz Teknik (KTÜ)", city: "Trabzon", local: 23, global: 1400, quota: 1500, acceptRate: 35, desc: "أفضل جامعة في منطقة البحر الأسود.", url: "https://ktu.edu.tr" },
-    // TIER 4
-    { id: 34, name: "Karabük Üniversitesi", city: "Karabuk", local: 70, global: 2000, quota: 5000, acceptRate: 85, desc: "الجامعة رقم 1 في عدد الطلاب الأجانب، قبول شبه مضمون.", url: "https://karabuk.edu.tr" },
-    { id: 35, name: "Harran Üniversitesi", city: "Sanliurfa", local: 65, global: 2100, quota: 2500, acceptRate: 80, desc: "تسهيلات كبيرة في القبول.", url: "https://harran.edu.tr" },
-    { id: 27, name: "Gaziantep Üniversitesi", city: "Gaziantep", local: 40, global: 1700, quota: 2500, acceptRate: 60, desc: "برامج باللغة الإنجليزية، وفرص قبول عالية.", url: "https://gantep.edu.tr" },
-    { id: 29, name: "Van Yüzüncü Yıl", city: "Van", local: 45, global: 1800, quota: 2400, acceptRate: 75, desc: "حرم جامعي ضخم، تشجع الطلاب الدوليين.", url: "https://yyu.edu.tr" },
-    { id: 45, name: "Sivas Cumhuriyet", city: "Sivas", local: 51, global: 1850, quota: 2800, acceptRate: 70, desc: "جامعة كبيرة وشاملة.", url: "https://cumhuriyet.edu.tr" },
-    { id: 42, name: "Kütahya Dumlupınar", city: "Kutahya", local: 75, global: 2300, quota: 2000, acceptRate: 70, desc: "بنية تحتية ممتازة وقبول سهل.", url: "https://dpu.edu.tr" },
-    { id: 43, name: "Afyon Kocatepe", city: "Afyon", local: 72, global: 2250, quota: 1700, acceptRate: 65, desc: "موقع استراتيجي وسط الطرق السريعة.", url: "https://aku.edu.tr" },
-    { id: 54, name: "Kastamonu Üniversitesi", city: "Kastamonu", local: 88, global: 2600, quota: 2200, acceptRate: 75, desc: "تركز على الغابات والسياحة، قبول سهل.", url: "https://kastamonu.edu.tr" },
-    { id: 57, name: "Sinop Üniversitesi", city: "Sinop", local: 115, global: 3000, quota: 700, acceptRate: 75, desc: "في أقصى الشمال، هادئة.", url: "https://sinop.edu.tr" },
-    { id: 52, name: "Yozgat Bozok", city: "Yozgat", local: 95, global: 2800, quota: 1400, acceptRate: 85, desc: "نامية، تبحث عن طلاب لملء المقاعد.", url: "https://bozok.edu.tr" },
-    { id: 61, name: "Iğdır Üniversitesi", city: "Igdir", local: 118, global: 3000, quota: 700, acceptRate: 90, desc: "أسهل الجامعات قبولاً، حدودية.", url: "https://igdir.edu.tr" },
-    { id: 63, name: "Bingöl Üniversitesi", city: "Bingol", local: 108, global: 2900, quota: 1200, acceptRate: 85, desc: "تتطور بسرعة، توفر سكن ومرافق.", url: "https://bingol.edu.tr" },
-    { id: 69, name: "Şırnak Üniversitesi", city: "Sirnak", local: 120, global: 3000, quota: 600, acceptRate: 92, desc: "تحتاج طلاب بشدة، القبول فوري تقريباً.", url: "https://sirnak.edu.tr" },
-    { id: 70, name: "Hakkari Üniversitesi", city: "Hakkari", local: 125, global: 3000, quota: 450, acceptRate: 90, desc: "بعيدة جداً، لذا المنافسة معدومة.", url: "https://hakkari.edu.tr" },
-    { id: 38, name: "Balıkesir Üniversitesi", city: "Balikesir", local: 62, global: 2100, quota: 1100, acceptRate: 50, desc: "موقع جيد وقبول معقول.", url: "https://balikesir.edu.tr" },
-    { id: 33, name: "Trakya Üniversitesi", city: "Edirne", local: 60, global: 2000, quota: 2000, acceptRate: 55, desc: "بوابة البلقان، كثافة طلابية عالية.", url: "https://trakya.edu.tr" },
-    { id: 14, name: "Anadolu Üniversitesi", city: "Eskisehir", local: 18, global: 1200, quota: 2500, acceptRate: 45, desc: "تعليم مفتوح ونظامي قوي.", url: "https://anadolu.edu.tr" },
-    { id: 21, name: "Eskişehir Osmangazi", city: "Eskisehir", local: 30, global: 1550, quota: 1100, acceptRate: 35, desc: "ممتازة طبياً.", url: "https://ogu.edu.tr" },
-    { id: 25, name: "İnönü Üniversitesi", city: "Malatya", local: 35, global: 1600, quota: 1800, acceptRate: 45, desc: "ممتازة في الطب.", url: "https://inonu.edu.tr" },
-    { id: 28, name: "Mersin Üniversitesi", city: "Mersin", local: 42, global: 1750, quota: 1300, acceptRate: 40, desc: "على البحر المتوسط.", url: "https://mersin.edu.tr" },
-    { id: 30, name: "Süleyman Demirel", city: "Isparta", local: 38, global: 1600, quota: 1900, acceptRate: 55, desc: "مدينة الورود، تعليم جيد.", url: "https://sdu.edu.tr" },
-    { id: 31, name: "Dicle Üniversitesi", city: "Diyarbakir", local: 48, global: 1850, quota: 1900, acceptRate: 60, desc: "عريقة في الشرق.", url: "https://dicle.edu.tr" },
-    { id: 32, name: "Pamukkale Üniversitesi", city: "Denizli", local: 50, global: 1900, quota: 1100, acceptRate: 40, desc: "مدينة سياحية.", url: "https://pau.edu.tr" },
-    { id: 36, name: "Bolu Abant İzzet Baysal", city: "Bolu", local: 55, global: 1950, quota: 1200, acceptRate: 45, desc: "طبيعة خلابة.", url: "https://ibu.edu.tr" },
-    { id: 37, name: "Çanakkale Onsekiz Mart", city: "Canakkale", local: 58, global: 1900, quota: 1300, acceptRate: 45, desc: "تاريخية.", url: "https://comu.edu.tr" },
-    { id: 39, name: "Muğla Sıtkı Koçman", city: "Mugla", local: 66, global: 2200, quota: 900, acceptRate: 40, desc: "في قلب السياحة.", url: "https://mu.edu.tr" },
-    { id: 40, name: "Aydın Adnan Menderes", city: "Aydin", local: 64, global: 2150, quota: 1200, acceptRate: 45, desc: "قريبة لإزمير.", url: "https://adu.edu.tr" },
-    { id: 41, name: "Manisa Celal Bayar", city: "Manisa", local: 52, global: 1900, quota: 1400, acceptRate: 45, desc: "قريبة لإزمير.", url: "https://cbu.edu.tr" },
-    { id: 44, name: "Tokat Gaziosmanpaşa", city: "Tokat", local: 68, global: 2200, quota: 1800, acceptRate: 65, desc: "داعمة للطلاب.", url: "https://gop.edu.tr" },
-    { id: 46, name: "Düzce Üniversitesi", city: "Duzce", local: 45, global: 1800, quota: 1400, acceptRate: 60, desc: "تتطور.", url: "https://duzce.edu.tr" },
-    { id: 47, name: "Kahramanmaraş Sütçü", city: "K.Maras", local: 69, global: 2200, quota: 2300, acceptRate: 65, desc: "صناعية.", url: "https://ksu.edu.tr" },
-    { id: 48, name: "Niğde Ömer Halisdemir", city: "Nigde", local: 63, global: 2100, quota: 1600, acceptRate: 65, desc: "رخيصة.", url: "https://ohu.edu.tr" },
-    { id: 49, name: "Aksaray Üniversitesi", city: "Aksaray", local: 80, global: 2500, quota: 1200, acceptRate: 70, desc: "وسطى.", url: "https://aksaray.edu.tr" },
-    { id: 50, name: "Nevşehir Hacı Bektaş", city: "Nevsehir", local: 85, global: 2600, quota: 950, acceptRate: 60, desc: "سياحية.", url: "https://nevsehir.edu.tr" },
-    { id: 51, name: "Kırşehir Ahi Evran", city: "Kirsehir", local: 90, global: 2700, quota: 1100, acceptRate: 70, desc: "زراعية.", url: "https://ahievran.edu.tr" },
-    { id: 53, name: "Recep Tayyip Erdoğan", city: "Rize", local: 49, global: 1850, quota: 1300, acceptRate: 65, desc: "حديثة.", url: "https://erdogan.edu.tr" },
-    { id: 55, name: "Giresun Üniversitesi", city: "Giresun", local: 92, global: 2700, quota: 950, acceptRate: 70, desc: "ساحلية.", url: "https://giresun.edu.tr" },
-    { id: 56, name: "Ordu Üniversitesi", city: "Ordu", local: 96, global: 2800, quota: 900, acceptRate: 70, desc: "خضراء.", url: "https://odu.edu.tr" },
-    { id: 58, name: "Hitit Üniversitesi", city: "Corum", local: 83, global: 2500, quota: 1200, acceptRate: 70, desc: "آثار.", url: "https://hitit.edu.tr" },
-    { id: 59, name: "Amasya Üniversitesi", city: "Amasya", local: 96, global: 2800, quota: 900, acceptRate: 70, desc: "تاريخية.", url: "https://amasya.edu.tr" },
-    { id: 60, name: "Kafkas Üniversitesi", city: "Kars", local: 82, global: 2500, quota: 1500, acceptRate: 65, desc: "باردة.", url: "https://kafkas.edu.tr" },
-    { id: 62, name: "Ağrı İbrahim Çeçen", city: "Agri", local: 102, global: 2900, quota: 1100, acceptRate: 75, desc: "شرقية.", url: "https://agri.edu.tr" },
-    { id: 64, name: "Muş Alparslan", city: "Mus", local: 116, global: 3000, quota: 900, acceptRate: 80, desc: "سهلة.", url: "https://alparslan.edu.tr" },
-    { id: 65, name: "Bitlis Eren", city: "Bitlis", local: 114, global: 3000, quota: 600, acceptRate: 80, desc: "معمارية.", url: "https://beu.edu.tr" },
-    { id: 66, name: "Siirt Üniversitesi", city: "Siirt", local: 106, global: 2900, quota: 950, acceptRate: 80, desc: "دافئة.", url: "https://siirt.edu.tr" },
-    { id: 67, name: "Batman Üniversitesi", city: "Batman", local: 104, global: 2900, quota: 1000, acceptRate: 75, desc: "صناعية.", url: "https://batman.edu.tr" },
-    { id: 68, name: "Mardin Artuklu", city: "Mardin", local: 99, global: 2800, quota: 1200, acceptRate: 70, desc: "سياحية.", url: "https://artuklu.edu.tr" },
-    { id: 71, name: "Adıyaman Üniversitesi", city: "Adiyaman", local: 94, global: 2800, quota: 1000, acceptRate: 70, desc: "طبية.", url: "https://adiyaman.edu.tr" },
-    { id: 72, name: "Kilis 7 Aralık", city: "Kilis", local: 109, global: 2900, quota: 1000, acceptRate: 75, desc: "حدودية.", url: "https://kilis.edu.tr" },
-    { id: 73, name: "Osmaniye Korkut Ata", city: "Osmaniye", local: 97, global: 2800, quota: 550, acceptRate: 70, desc: "هندسية.", url: "https://osmaniye.edu.tr" },
-    { id: 74, name: "İskenderun Teknik", city: "Hatay", local: 85, global: 2600, quota: 500, acceptRate: 40, desc: "تقنية.", url: "https://iste.edu.tr" },
-    { id: 75, name: "Hatay Mustafa Kemal", city: "Hatay", local: 60, global: 2000, quota: 1500, acceptRate: 50, desc: "شاملة.", url: "https://mku.edu.tr" },
-    { id: 76, name: "Tekirdağ Namık Kemal", city: "Tekirdag", local: 72, global: 2250, quota: 1200, acceptRate: 50, desc: "قريبة.", url: "https://nku.edu.tr" },
-    { id: 77, name: "Kırklareli Üniversitesi", city: "Kirklareli", local: 93, global: 2700, quota: 900, acceptRate: 65, desc: "هادئة.", url: "https://klu.edu.tr" },
-    { id: 78, name: "Yalova Üniversitesi", city: "Yalova", local: 100, global: 2800, quota: 500, acceptRate: 45, desc: "بحرية.", url: "https://yalova.edu.tr" },
-    { id: 79, name: "Bilecik Şeyh Edebali", city: "Bilecik", local: 91, global: 2700, quota: 600, acceptRate: 60, desc: "عثمانية.", url: "https://bilecik.edu.tr" },
-    { id: 80, name: "Bandırma Onyedi Eylül", city: "Balikesir", local: 103, global: 2900, quota: 650, acceptRate: 60, desc: "اقتصادية.", url: "https://bandirma.edu.tr" },
-    { id: 81, name: "Uşak Üniversitesi", city: "Usak", local: 89, global: 2600, quota: 1200, acceptRate: 65, desc: "صناعية.", url: "https://usak.edu.tr" },
-    { id: 82, name: "Karamanoğlu Mehmetbey", city: "Karaman", local: 87, global: 2600, quota: 1100, acceptRate: 65, desc: "لغوية.", url: "https://kmu.edu.tr" },
-    { id: 83, name: "Bartın Üniversitesi", city: "Bartin", local: 101, global: 2900, quota: 750, acceptRate: 70, desc: "خضراء.", url: "https://bartin.edu.tr" },
-    { id: 84, name: "Tunceli Munzur", city: "Tunceli", local: 100, global: 2800, quota: 500, acceptRate: 80, desc: "طبيعية.", url: "https://munzur.edu.tr" },
-    { id: 85, name: "Ardahan Üniversitesi", city: "Ardahan", local: 122, global: 3000, quota: 400, acceptRate: 90, desc: "باردة.", url: "https://ardahan.edu.tr" },
-    { id: 86, name: "Gümüşhane Üniversitesi", city: "Gumushane", local: 105, global: 2900, quota: 900, acceptRate: 75, desc: "جبلية.", url: "https://gumushane.edu.tr" },
-    { id: 87, name: "Bayburt Üniversitesi", city: "Bayburt", local: 112, global: 3000, quota: 600, acceptRate: 85, desc: "صغيرة.", url: "https://bayburt.edu.tr" },
-    { id: 88, name: "Artvin Çoruh", city: "Artvin", local: 110, global: 3000, quota: 600, acceptRate: 80, desc: "غابات.", url: "https://artvin.edu.tr" },
-    { id: 89, name: "İstanbul Medeniyet", city: "Istanbul", local: 35, global: 1600, quota: 450, acceptRate: 20, desc: "آسيوية.", url: "https://medeniyet.edu.tr" },
-    { id: 90, name: "Ankara Yıldırım Beyazıt", city: "Ankara", local: 33, global: 1550, quota: 600, acceptRate: 25, desc: "دولية.", url: "https://aybu.edu.tr" },
-    { id: 91, name: "Sağlık Bilimleri", city: "Istanbul", local: 27, global: 1500, quota: 1500, acceptRate: 20, desc: "مستشفيات.", url: "https://sbu.edu.tr" },
-    { id: 92, name: "Türk-Alman", city: "Istanbul", local: 95, global: 2800, quota: 100, acceptRate: 5, desc: "شراكة.", url: "https://tau.edu.tr" },
-    { id: 94, name: "İzmir Yüksek Teknoloji", city: "Izmir", local: 29, global: 1500, quota: 150, acceptRate: 10, desc: "بحثية.", url: "https://iyte.edu.tr" },
-    { id: 95, name: "İzmir Kâtip Çelebi", city: "Izmir", local: 37, global: 1600, quota: 600, acceptRate: 25, desc: "نامية.", url: "https://ikcu.edu.tr" },
-    { id: 96, name: "İzmir Bakırçay", city: "Izmir", local: 100, global: 2800, quota: 300, acceptRate: 50, desc: "تكنولوجية.", url: "https://bakircay.edu.tr" },
-    { id: 97, name: "İzmir Demokrasi", city: "Izmir", local: 105, global: 2900, quota: 350, acceptRate: 55, desc: "عامة.", url: "https://idu.edu.tr" },
-    { id: 98, name: "Ankara Hacı Bayram Veli", city: "Ankara", local: 60, global: 2000, quota: 900, acceptRate: 40, desc: "أدبية.", url: "https://hacibayram.edu.tr" },
-    { id: 99, name: "Eskişehir Teknik", city: "Eskisehir", local: 48, global: 1800, quota: 1000, acceptRate: 35, desc: "طيران.", url: "https://eskisehir.edu.tr" },
-    { id: 100, name: "Konya Teknik", city: "Konya", local: 50, global: 1900, quota: 800, acceptRate: 40, desc: "هندسة.", url: "https://ktun.edu.tr" }
+    { id: 1, name: "Middle East Technical Uni. (ODTÜ)", city: "Ankara", local: 1, global: 269, quota: 350, acceptRate: 5, desc_ar: "الدراسة بالإنجليزية 100%، تتطلب SAT عالٍ جداً.", desc_en: "100% English instruction, requires elite SAT scores.", url: "https://metu.edu.tr" },
+    { id: 2, name: "Boğaziçi Üniversitesi", city: "Istanbul", local: 4, global: 371, quota: 150, acceptRate: 2, desc_ar: "أصعب جامعة حكومية في القبول، نخبة النخبة.", desc_en: "Most competitive public university, elite academic requirement.", url: "https://bogazici.edu.tr" },
+    { id: 3, name: "İstanbul Teknik Üni. (İTÜ)", city: "Istanbul", local: 2, global: 298, quota: 650, acceptRate: 6, desc_ar: "قلعة الهندسة، تتطلب خلفية رياضية قوية.", desc_en: "Engineering powerhouse, requires strong math background.", url: "https://itu.edu.tr" },
+    { id: 4, name: "Hacettepe Üniversitesi", city: "Ankara", local: 3, global: 571, quota: 400, acceptRate: 4, desc_ar: "الرقم 1 طبياً، التنافس على مقاعد الطب فيها جنوني.", desc_en: "#1 in Medicine, extreme competition for medical seats.", url: "https://hacettepe.edu.tr" },
+    { id: 5, name: "Ankara Üniversitesi", city: "Ankara", local: 5, global: 697, quota: 1800, acceptRate: 12, desc_ar: "الأعرق في العاصمة، قوية في العلوم السياسية.", desc_en: "Historic capital university, strong in Political Science.", url: "https://ankara.edu.tr" },
+    { id: 6, name: "İstanbul Üniversitesi", city: "Istanbul", local: 6, global: 702, quota: 2500, acceptRate: 15, desc_ar: "جامعة ضخمة، القبول فيها صعب لكن الكوتا كبيرة.", desc_en: "Massive university, high quota but high competition.", url: "https://istanbul.edu.tr" },
+    { id: 12, name: "Gebze Teknik Üni.", city: "Kocaeli", local: 12, global: 1150, quota: 300, acceptRate: 10, desc_ar: "معهد تكنولوجيا متقدم، يركز على البحث.", desc_en: "Advanced technology institute, research-focused.", url: "https://gtu.edu.tr" },
+    { id: 13, name: "Yıldız Teknik Üni.", city: "Istanbul", local: 13, global: 1180, quota: 600, acceptRate: 10, desc_ar: "موقع مركزي ومستوى أكاديمي مرموق.", desc_en: "Central location with a prestigious academic level.", url: "https://yildiz.edu.tr" },
+    { id: 7, name: "Ege Üniversitesi", city: "Izmir", local: 7, global: 900, quota: 2000, acceptRate: 18, desc_ar: "جوهرة إزمير، حرم جامعي متكامل.", desc_en: "The jewel of Izmir, integrated campus life.", url: "https://ege.edu.tr" },
+    { id: 10, name: "Marmara Üniversitesi", city: "Istanbul", local: 10, global: 1050, quota: 1200, acceptRate: 15, desc_ar: "تدرس بـ 4 لغات، منافسة عالية.", desc_en: "Multilingual education (4 languages), high competition.", url: "https://marmara.edu.tr" },
+    { id: 8, name: "Gazi Üniversitesi", city: "Ankara", local: 8, global: 950, quota: 800, acceptRate: 14, desc_ar: "تاريخية وقوية في الهندسة والتربية.", desc_en: "Historic, powerful in Engineering and Education.", url: "https://gazi.edu.tr" },
+    { id: 11, name: "Erciyes Üniversitesi", city: "Kayseri", local: 11, global: 1100, quota: 2000, acceptRate: 25, desc_ar: "جامعة بحثية قوية جداً وسط الأناضول.", desc_en: "Very strong research university in Central Anatolia.", url: "https://erciyes.edu.tr" },
+    { id: 15, name: "Çukurova Üniversitesi", city: "Adana", local: 15, global: 1250, quota: 1900, acceptRate: 22, desc_ar: "حرم جامعي جميل جداً على البحيرة.", desc_en: "Beautiful campus located right on the lake.", url: "https://cu.edu.tr" },
+    { id: 22, name: "Selçuk Üniversitesi", city: "Konya", local: 19, global: 1250, quota: 3500, acceptRate: 40, desc_ar: "مدينة جامعية ضخمة، فرص قبول جيدة جداً.", desc_en: "Huge university city, very good admission chances.", url: "https://selcuk.edu.tr" },
+    { id: 20, name: "Sakarya Üniversitesi", city: "Sakarya", local: 28, global: 1500, quota: 2500, acceptRate: 35, desc_ar: "قريبة لإسطنبول، وجهة مفضلة للعرب.", desc_en: "Close to Istanbul, a top choice for Arab students.", url: "https://sakarya.edu.tr" },
+    { id: 17, name: "Bursa Uludağ Üni.", city: "Bursa", local: 22, global: 1350, quota: 2200, acceptRate: 30, desc_ar: "في قلب مدينة الصناعة، تعليم عملي قوي.", desc_en: "In the heart of industry, strong practical education.", url: "https://uludag.edu.tr" },
+    { id: 16, name: "Akdeniz Üniversitesi", city: "Antalya", local: 20, global: 1300, quota: 1300, acceptRate: 25, desc_ar: "السياحة والطب، موقع جغرافي رائع.", desc_en: "Specializes in Tourism/Medicine, great location.", url: "https://akdeniz.edu.tr" },
+    { id: 23, name: "Fırat Üniversitesi", city: "Elazig", local: 17, global: 1038, quota: 2200, acceptRate: 50, desc_ar: "قفزة هائلة في التصنيف، ممتازة تكنولوجياً.", desc_en: "Huge jump in rankings, excellent tech programs.", url: "https://firat.edu.tr" },
+    { id: 24, name: "Atatürk Üniversitesi", city: "Erzurum", local: 9, global: 1013, quota: 3500, acceptRate: 55, desc_ar: "عريقة جداً، البعد الجغرافي يسهل القبول.", desc_en: "Historic; remote location makes admission easier.", url: "https://atauni.edu.tr" },
+    { id: 34, name: "Karabük Üniversitesi", city: "Karabuk", local: 70, global: 2000, quota: 5000, acceptRate: 85, desc_ar: "الأولى في عدد الأجانب، قبول شبه مضمون.", desc_en: "#1 for foreigners, almost guaranteed admission.", url: "https://karabuk.edu.tr" },
+    { id: 35, name: "Harran Üniversitesi", city: "Sanliurfa", local: 65, global: 2100, quota: 2500, acceptRate: 80, desc_ar: "تسهيلات كبيرة في القبول للأجانب.", desc_en: "Significant admission facilities for internationals.", url: "https://harran.edu.tr" },
+    { id: 27, name: "Gaziantep Üniversitesi", city: "Gaziantep", local: 40, global: 1700, quota: 2500, acceptRate: 60, desc_ar: "برامج بالإنجليزية وفرص قبول عالية.", desc_en: "English programs available, high admission rates.", url: "https://gantep.edu.tr" },
+    { id: 28, name: "Mersin Üniversitesi", city: "Mersin", local: 42, global: 1750, quota: 1300, acceptRate: 40, desc_ar: "موقع ساحلي متميز وبرامج متنوعة.", desc_en: "Prime coastal location with diverse programs.", url: "https://mersin.edu.tr" },
+    { id: 69, name: "Şırnak Üniversitesi", city: "Sirnak", local: 120, global: 3000, quota: 600, acceptRate: 92, desc_ar: "القبول فوري تقريباً لنقص الطلاب.", desc_en: "Almost instant admission due to student shortage.", url: "https://sirnak.edu.tr" },
+    { id: 70, name: "Hakkari Üniversitesi", city: "Hakkari", local: 125, global: 3000, quota: 450, acceptRate: 90, desc_ar: "بعيدة جداً، لذا المنافسة معدومة.", desc_en: "Very remote, resulting in zero competition.", url: "https://hakkari.edu.tr" },
+    { id: 61, name: "Iğdır Üniversitesi", city: "Igdir", local: 118, global: 3000, quota: 700, acceptRate: 90, desc_ar: "أسهل الجامعات قبولاً، حدودية.", desc_en: "Easiest for admission, border location.", url: "https://igdir.edu.tr" },
+    { id: 85, name: "Ardahan Üniversitesi", city: "Ardahan", local: 122, global: 3000, quota: 400, acceptRate: 90, desc_ar: "باردة جداً وقبولها سهل للغاية.", desc_en: "Very cold climate, extremely easy admission.", url: "https://ardahan.edu.tr" },
+    { id: 31, name: "Dicle Üniversitesi", city: "Diyarbakir", local: 48, global: 1850, quota: 1900, acceptRate: 60, desc_ar: "عريقة في الشرق، مرافق طبية قوية.", desc_en: "Historic eastern uni, strong medical facilities.", url: "https://dicle.edu.tr" },
+    { id: 18, name: "Karadeniz Teknik (KTÜ)", city: "Trabzon", local: 23, global: 1400, quota: 1500, acceptRate: 35, desc_ar: "أفضل جامعة في منطقة البحر الأسود.", desc_en: "Best university in the Black Sea region.", url: "https://ktu.edu.tr" },
+    { id: 53, name: "Recep Tayyip Erdoğan", city: "Rize", local: 49, global: 1850, quota: 1300, acceptRate: 65, desc_ar: "حديثة ومدعومة حكومياً بشكل كبير.", desc_en: "Modern and heavily government-supported.", url: "https://erdogan.edu.tr" },
+    { id: 91, name: "Sağlık Bilimleri", city: "Istanbul", local: 27, global: 1500, quota: 1500, acceptRate: 20, desc_ar: "متخصصة طبياً وتدريبها في المشافي.", desc_en: "Medical specialist, training in state hospitals.", url: "https://sbu.edu.tr" },
+    { id: 92, name: "Türk-Alman", city: "Istanbul", local: 95, global: 2800, quota: 100, acceptRate: 5, desc_ar: "شراكة ألمانية، تتطلب لغة ألمانية.", desc_en: "German partnership, requires German language.", url: "https://tau.edu.tr" },
+    { id: 21, name: "Eskişehir Osmangazi", city: "Eskisehir", local: 30, global: 1550, quota: 1100, acceptRate: 35, desc_ar: "ممتازة طبياً وهندسياً في مدينة طلابية.", desc_en: "Excellent in Med/Eng, located in a student city.", url: "https://ogu.edu.tr" },
+    { id: 14, name: "Anadolu Üniversitesi", city: "Eskisehir", local: 18, global: 1200, quota: 2500, acceptRate: 45, desc_ar: "الرائدة في نظام التعليم المفتوح.", desc_en: "Pioneer in open and distance education.", url: "https://anadolu.edu.tr" },
+    { id: 99, name: "Eskişehir Teknik", city: "Eskisehir", local: 48, global: 1800, quota: 1000, acceptRate: 35, desc_ar: "مركز لعلوم الطيران والفضاء.", desc_en: "Hub for aviation and space sciences.", url: "https://eskisehir.edu.tr" },
+    { id: 100, name: "Konya Teknik", city: "Konya", local: 50, global: 1900, quota: 800, acceptRate: 40, desc_ar: "تركيز تقني بحت في مدينة صناعية.", desc_en: "Pure technical focus in an industrial city.", url: "https://ktun.edu.tr" },
+    { id: 25, name: "İnönü Üniversitesi", city: "Malatya", local: 35, global: 1600, quota: 1800, acceptRate: 45, desc_ar: "مركز عالمي لزراعة الكبد.", desc_en: "World-class center for liver transplants.", url: "https://inonu.edu.tr" },
+    { id: 26, name: "Kocaeli Üniversitesi", city: "Kocaeli", local: 32, global: 1650, quota: 1800, acceptRate: 30, desc_ar: "قوية هندسياً لقربها من المنطقة الصناعية.", desc_en: "Strong engineering due to industrial proximity.", url: "https://kocaeli.edu.tr" },
+    { id: 89, name: "İstanbul Medeniyet", city: "Istanbul", local: 35, global: 1600, quota: 450, acceptRate: 20, desc_ar: "جامعة حديثة في الجانب الآسيوي.", desc_en: "Modern university on the Asian side.", url: "https://medeniyet.edu.tr" },
+    { id: 90, name: "Ankara Yıldırım Beyazıt", city: "Ankara", local: 33, global: 1550, quota: 600, acceptRate: 25, desc_ar: "برامج دولية تدرس بالإنجليزية.", desc_en: "International programs taught in English.", url: "https://aybu.edu.tr" },
+    { id: 30, name: "Süleyman Demirel", city: "Isparta", local: 38, global: 1600, quota: 1900, acceptRate: 55, desc_ar: "مدينة الورود، تعليم جيد ومصاريف منخفضة.", desc_en: "City of Roses, good education, low costs.", url: "https://sdu.edu.tr" },
+    { id: 32, name: "Pamukkale Üniversitesi", city: "Denizli", local: 50, global: 1900, quota: 1100, acceptRate: 40, desc_ar: "مدينة سياحية، قوية في الطب والعلوم.", desc_en: "Tourism city, strong in Medicine/Science.", url: "https://pau.edu.tr" },
+    { id: 36, name: "Bolu Abant İzzet Baysal", city: "Bolu", local: 55, global: 1950, quota: 1200, acceptRate: 45, desc_ar: "طبيعة خلابة وموقع بين أنقرة وإسطنبول.", desc_en: "Beautiful nature, located between major cities.", url: "https://ibu.edu.tr" },
+    { id: 37, name: "Çanakkale Onsekiz Mart", city: "Canakkale", local: 58, global: 1900, quota: 1300, acceptRate: 45, desc_ar: "تاريخية بموقع جغرافي مميز.", desc_en: "Historic with a unique geographic location.", url: "https://comu.edu.tr" },
+    { id: 38, name: "Balıkesir Üniversitesi", city: "Balikesir", local: 62, global: 2100, quota: 1100, acceptRate: 50, desc_ar: "موقع جيد وقبول معقول للأجانب.", desc_en: "Good location, reasonable admission.", url: "https://balikesir.edu.tr" },
+    { id: 39, name: "Muğla Sıtkı Koçman", city: "Mugla", local: 66, global: 2200, quota: 900, acceptRate: 40, desc_ar: "في قلب المناطق السياحية العالمية.", desc_en: "In the heart of global tourism zones.", url: "https://mu.edu.tr" },
+    { id: 40, name: "Aydın Adnan Menderes", city: "Aydin", local: 64, global: 2150, quota: 1200, acceptRate: 45, desc_ar: "قريبة لإزمير وتكاليف معيشية منخفضة.", desc_en: "Close to Izmir with low living costs.", url: "https://adu.edu.tr" },
+    { id: 41, name: "Manisa Celal Bayar", city: "Manisa", local: 52, global: 1900, quota: 1400, acceptRate: 45, desc_ar: "قريبة جداً لإزمير، قوية تقنياً.", desc_en: "Very close to Izmir, technically strong.", url: "https://cbu.edu.tr" },
+    { id: 42, name: "Kütahya Dumlupınar", city: "Kutahya", local: 75, global: 2300, quota: 2000, acceptRate: 70, desc_ar: "بنية تحتية ممتازة وقبول سهل للأجانب.", desc_en: "Excellent infrastructure, easy admission.", url: "https://dpu.edu.tr" },
+    { id: 43, name: "Afyon Kocatepe", city: "Afyon", local: 72, global: 2250, quota: 1700, acceptRate: 65, desc_ar: "موقع استراتيجي وسط الطرق السريعة.", desc_en: "Strategic location on major highway hubs.", url: "https://aku.edu.tr" },
+    { id: 44, name: "Tokat Gaziosmanpaşa", city: "Tokat", local: 68, global: 2200, quota: 1800, acceptRate: 65, desc_ar: "جامعة صديقة للطلاب الدوليين.", desc_en: "Friendly environment for international students.", url: "https://gop.edu.tr" },
+    { id: 45, name: "Sivas Cumhuriyet", city: "Sivas", local: 51, global: 1850, quota: 2800, acceptRate: 70, desc_ar: "جامعة كبيرة وشاملة في وسط الأناضول.", desc_en: "Large, comprehensive Central Anatolian uni.", url: "https://cumhuriyet.edu.tr" },
+    { id: 46, name: "Düzce Üniversitesi", city: "Duzce", local: 45, global: 1800, quota: 1400, acceptRate: 60, desc_ar: "جامعة تتطور بسرعة وتركز على التكنولوجيا.", desc_en: "Rapidly developing, technology-focused.", url: "https://duzce.edu.tr" },
+    { id: 47, name: "Kahramanmaraş Sütçü İmam", city: "K.Maras", local: 69, global: 2200, quota: 2300, acceptRate: 65, desc_ar: "مدينة صناعية وفرص تدريب جيدة.", desc_en: "Industrial city with good training prospects.", url: "https://ksu.edu.tr" },
+    { id: 48, name: "Niğde Ömer Halisdemir", city: "Nigde", local: 63, global: 2100, quota: 1600, acceptRate: 65, desc_ar: "تكاليف رخيصة وقبول متيسر.", desc_en: "Cheap living costs and accessible admission.", url: "https://ohu.edu.tr" },
+    { id: 49, name: "Aksaray Üniversitesi", city: "Aksaray", local: 80, global: 2500, quota: 1200, acceptRate: 70, desc_ar: "موقع متوسط وقبول سهل.", desc_en: "Central location, easy admission.", url: "https://aksaray.edu.tr" },
+    { id: 50, name: "Nevşehir Hacı Bektaş", city: "Nevsehir", local: 85, global: 2600, quota: 950, acceptRate: 60, desc_ar: "منطقة سياحية خلابة (كابادوكيا).", desc_en: "Located in beautiful Cappadocia.", url: "https://nevsehir.edu.tr" },
+    { id: 51, name: "Kırşehir Ahi Evran", city: "Kirsehir", local: 90, global: 2700, quota: 1100, acceptRate: 70, desc_ar: "زراعية وتربوية متميزة.", desc_en: "Distinguished in Agriculture and Education.", url: "https://ahievran.edu.tr" },
+    { id: 52, name: "Yozgat Bozok", city: "Yozgat", local: 95, global: 2800, quota: 1400, acceptRate: 85, desc_ar: "تبحث عن طلاب لملء المقاعد.", desc_en: "Actively seeking students to fill quotas.", url: "https://bozok.edu.tr" },
+    { id: 54, name: "Kastamonu Üniversitesi", city: "Kastamonu", local: 88, global: 2600, quota: 2200, acceptRate: 75, desc_ar: "تركز على الغابات والسياحة، قبول سهل.", desc_en: "Focus on Forestry/Tourism, easy admission.", url: "https://kastamonu.edu.tr" },
+    { id: 55, name: "Giresun Üniversitesi", city: "Giresun", local: 92, global: 2700, quota: 950, acceptRate: 70, desc_ar: "جامعة ساحلية هادئة ببيئة آمنة.", desc_en: "Quiet coastal uni with a safe environment.", url: "https://giresun.edu.tr" },
+    { id: 56, name: "Ordu Üniversitesi", city: "Ordu", local: 96, global: 2800, quota: 900, acceptRate: 70, desc_ar: "منطقة خضراء وتكاليف منخفضة.", desc_en: "Green region with low living costs.", url: "https://odu.edu.tr" },
+    { id: 57, name: "Sinop Üniversitesi", city: "Sinop", local: 115, global: 3000, quota: 700, acceptRate: 75, desc_ar: "في أقصى الشمال، جو هادئ للدراسة.", desc_en: "Far north, very quiet study atmosphere.", url: "https://sinop.edu.tr" },
+    { id: 58, name: "Hitit Üniversitesi", city: "Corum", local: 83, global: 2500, quota: 1200, acceptRate: 70, desc_ar: "مركز لعلم الآثار والتاريخ.", desc_en: "A center for Archaeology and History.", url: "https://hitit.edu.tr" },
+    { id: 59, name: "Amasya Üniversitesi", city: "Amasya", local: 96, global: 2800, quota: 900, acceptRate: 70, desc_ar: "مدينة تاريخية وعريقة.", desc_en: "Historic city with long-standing roots.", url: "https://amasya.edu.tr" },
+    { id: 60, name: "Kafkas Üniversitesi", city: "Kars", local: 82, global: 2500, quota: 1500, acceptRate: 65, desc_ar: "في الشرق، قبول متيسر رغم برودة الجو.", desc_en: "Eastern uni, easy admission despite cold.", url: "https://kafkas.edu.tr" },
+    { id: 62, name: "Ağrı İbrahim Çهçen", city: "Agri", local: 102, global: 2900, quota: 1100, acceptRate: 75, desc_ar: "جامعة شرقية حديثة البناء.", desc_en: "Modern eastern university campus.", url: "https://agri.edu.tr" },
+    { id: 63, name: "Bingöl Üniversitesi", city: "Bingol", local: 108, global: 2900, quota: 1200, acceptRate: 85, desc_ar: "تتطور بسرعة وتوفر سكن داخلي.", desc_en: "Rapidly developing with on-campus housing.", url: "https://bingol.edu.tr" },
+    { id: 64, name: "Muş Alparslan", city: "Mus", local: 116, global: 3000, quota: 900, acceptRate: 80, desc_ar: "فرص قبول عالية جداً للأجانب.", desc_en: "Very high admission chances for foreigners.", url: "https://alparslan.edu.tr" },
+    { id: 65, name: "Bitlis Eren", city: "Bitlis", local: 114, global: 3000, quota: 600, acceptRate: 80, desc_ar: "بناء معماري مميز وقبول سهل.", desc_en: "Unique architecture, easy admission.", url: "https://beu.edu.tr" },
+    { id: 66, name: "Siirt Üniversitesi", city: "Siirt", local: 106, global: 2900, quota: 950, acceptRate: 80, desc_ar: "جو دافئ وتكاليف منخفضة.", desc_en: "Warm climate with low living expenses.", url: "https://siirt.edu.tr" },
+    { id: 67, name: "Batman Üniversitesi", city: "Batman", local: 104, global: 2900, quota: 1000, acceptRate: 75, desc_ar: "مدينة صناعية ونفطية، قبول ميسر.", desc_en: "Industrial/Oil city, easy admission.", url: "https://batman.edu.tr" },
+    { id: 68, name: "Mardin Artuklu", city: "Mardin", local: 99, global: 2800, quota: 1200, acceptRate: 70, desc_ar: "مدينة سياحية تاريخية بامتياز.", desc_en: "Historic tourism city par excellence.", url: "https://artuklu.edu.tr" },
+    { id: 71, name: "Adıyaman Üniversitesi", city: "Adiyaman", local: 94, global: 2800, quota: 1000, acceptRate: 70, desc_ar: "قوية طبياً في منطقة الفرات.", desc_en: "Medically strong in the Euphrates region.", url: "https://adiyaman.edu.tr" },
+    { id: 72, name: "Kilis 7 Aralık", city: "Kilis", local: 109, global: 2900, quota: 1000, acceptRate: 75, desc_ar: "حدودية وودودة للطلاب الأجانب.", desc_en: "Border location, very friendly to foreigners.", url: "https://kilis.edu.tr" },
+    { id: 73, name: "Osmaniye Korkut Ata", city: "Osmaniye", local: 97, global: 2800, quota: 550, acceptRate: 70, desc_ar: "جامعة هندسية ناشئة.", desc_en: "Emerging engineering-focused university.", url: "https://osmaniye.edu.tr" },
+    { id: 74, name: "İskenderun Teknik", city: "Hatay", local: 85, global: 2600, quota: 500, acceptRate: 40, desc_ar: "تركيز تقني بحري متميز.", desc_en: "Unique maritime and technical focus.", url: "https://iste.edu.tr" },
+    { id: 75, name: "Hatay Mustafa Kemal", city: "Hatay", local: 60, global: 2000, quota: 1500, acceptRate: 50, desc_ar: "جامعة شاملة ببيئة اجتماعية حيوية.", desc_en: "Comprehensive uni with a lively social scene.", url: "https://mku.edu.tr" },
+    { id: 76, name: "Tekirdağ Namık Kemal", city: "Tekirdag", local: 72, global: 2250, quota: 1200, acceptRate: 50, desc_ar: "قريبة جداً من إسطنبول.", desc_en: "Located very close to Istanbul.", url: "https://nku.edu.tr" },
+    { id: 77, name: "Kırklareli Üniversitesi", city: "Kirklareli", local: 93, global: 2700, quota: 900, acceptRate: 65, desc_ar: "مدينة هادئة وآمنة للطلاب.", desc_en: "Safe, quiet city for students.", url: "https://klu.edu.tr" },
+    { id: 78, name: "Yalova Üniversitesi", city: "Yalova", local: 100, global: 2800, quota: 500, acceptRate: 45, desc_ar: "موقع استراتيجي على البحر.", desc_en: "Strategic seaside location.", url: "https://yalova.edu.tr" },
+    { id: 79, name: "Bilecik Şeyh Edebali", city: "Bilecik", local: 91, global: 2700, quota: 600, acceptRate: 60, desc_ar: "أهمية تاريخية وقبول معقول.", desc_en: "Historic importance, reasonable admission.", url: "https://bilecik.edu.tr" },
+    { id: 80, name: "Bandırma Onyedi Eylül", city: "Balikesir", local: 103, global: 2900, quota: 650, acceptRate: 60, desc_ar: "قوية اقتصادياً وادرياً.", desc_en: "Strong in Economics and Management.", url: "https://bandirma.edu.tr" },
+    { id: 81, name: "Uşak Üniversitesi", city: "Usak", local: 89, global: 2600, quota: 1200, acceptRate: 65, desc_ar: "مركز لصناعة الجلود والمنسوجات.", desc_en: "Leather and textile industry hub.", url: "https://usak.edu.tr" },
+    { id: 82, name: "Karamanoğlu Mehmetbey", city: "Karaman", local: 87, global: 2600, quota: 1100, acceptRate: 65, desc_ar: "تركيز لغوي وتاريخي.", desc_en: "Focus on Language and History.", url: "https://kmu.edu.tr" },
+    { id: 83, name: "Bartın Üniversitesi", city: "Bartin", local: 101, global: 2900, quota: 750, acceptRate: 70, desc_ar: "منطقة خضراء وهادئة جداً.", desc_en: "Green region, very quiet environment.", url: "https://bartin.edu.tr" },
+    { id: 84, name: "Tunceli Munzur", city: "Tunceli", local: 100, global: 2800, quota: 500, acceptRate: 80, desc_ar: "طبيعة بكر وقبول ميسر.", desc_en: "Untouched nature, accessible admission.", url: "https://munzur.edu.tr" },
+    { id: 86, name: "Gümüşhane Üniversitesi", city: "Gumushane", local: 105, global: 2900, quota: 900, acceptRate: 75, desc_ar: "مدينة جبلية وقبول سهل.", desc_en: "Mountainous city, easy admission.", url: "https://gumushane.edu.tr" },
+    { id: 87, name: "Bayburt Üniversitesi", city: "Bayburt", local: 112, global: 3000, quota: 600, acceptRate: 85, desc_ar: "مدينة صغيرة وقبول سريع.", desc_en: "Small city, rapid admission process.", url: "https://bayburt.edu.tr" },
+    { id: 88, name: "Artvin Çoruh", city: "Artvin", local: 110, global: 3000, quota: 600, acceptRate: 80, desc_ar: "غابات وجو هادئ.", desc_en: "Forests and a peaceful atmosphere.", url: "https://artvin.edu.tr" },
+    { id: 93, name: "Galatasaray Üniversitesi", city: "Istanbul", local: 110, global: 2800, quota: 40, acceptRate: 1, desc_ar: "فرانكفونية، مقاعد محدودة للغاية.", desc_en: "Francophone, extremely limited seats.", url: "https://gsu.edu.tr" },
+    { id: 94, name: "İzmir Yüksek Teknoloji", city: "Izmir", local: 29, global: 1500, quota: 150, acceptRate: 10, desc_ar: "بحثية تقنية رفيعة المستوى.", desc_en: "High-level technical research institute.", url: "https://iyte.edu.tr" },
+    { id: 95, name: "İzmir Kâtip Çelebi", city: "Izmir", local: 37, global: 1600, quota: 600, acceptRate: 25, desc_ar: "جامعة ناشئة ومتطورة طبياً.", desc_en: "Emerging, medically advanced university.", url: "https://ikcu.edu.tr" },
+    { id: 96, name: "İzmir Bakırçay", city: "Izmir", local: 100, global: 2800, quota: 300, acceptRate: 50, desc_ar: "تركيز تكنولوجي حديث.", desc_en: "Modern technology focus.", url: "https://bakircay.edu.tr" },
+    { id: 97, name: "İzmir Demokrasi", city: "Izmir", local: 105, global: 2900, quota: 350, acceptRate: 55, desc_ar: "جامعة عامة بموقع جيد.", desc_en: "Public university in a good location.", url: "https://idu.edu.tr" },
+    { id: 98, name: "Ankara Hacı Bayram Veli", city: "Ankara", local: 60, global: 2000, quota: 900, acceptRate: 40, desc_ar: "متميزة في العلوم الإنسانية والفنون.", desc_en: "Distinguished in Humanities and Arts.", url: "https://hacibayram.edu.tr" }
 ];
 
 const container = document.getElementById('cardContainer');
 
-// RENDER ALL CARDS
 function renderCards(data) {
     container.innerHTML = "";
     data.forEach((u) => {
         const difficultyColor = u.acceptRate < 10 ? 'text-red-600' : (u.acceptRate < 40 ? 'text-orange-500' : 'text-green-600');
-        
         container.innerHTML += `
             <div class="uni-card bg-white p-6 rounded-3xl shadow-sm">
                 <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">${u.city}</p>
                 <h4 class="font-black text-slate-800 mb-4 h-12 overflow-hidden leading-tight">${u.name}</h4>
-
                 <div class="text-[11px] space-y-2 mb-6">
                     <div class="flex justify-between border-b border-gray-50 pb-1">
                         <span class="text-gray-400 font-bold uppercase">Global Rank</span>
@@ -256,87 +190,45 @@ function renderCards(data) {
                         <span class="font-black ${difficultyColor}">${u.acceptRate}%</span>
                     </div>
                 </div>
-
-                <button onclick="openModal(${u.id})"
-                    class="w-full py-3 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-blue-600 transition shadow-lg shadow-slate-100">
-                    STRATEGY NOTE
-                </button>
+                <button onclick="openModal(${u.id})" class="w-full py-3 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-blue-600 transition">STRATEGY / الاستراتيجية</button>
             </div>
         `;
     });
 }
 
-// MODAL LOGIC
 function openModal(id) {
     const u = universities.find(item => item.id === id);
     const modal = document.getElementById('uniModal');
-    
     document.getElementById('modalTitle').innerText = u.name;
     document.getElementById('modalContent').innerHTML = `
-        <div class="space-y-5">
-            <div class="bg-blue-50 p-5 rounded-2xl text-right dir-rtl">
-                <p class="text-sm leading-relaxed text-slate-700 font-semibold">${u.desc}</p>
+        <div class="space-y-6">
+            <div class="bg-blue-50 p-5 rounded-2xl">
+                <p class="text-xs font-black text-blue-600 uppercase mb-2">English Strategy Note</p>
+                <p class="text-sm leading-relaxed text-slate-700 font-semibold">${u.desc_en}</p>
+            </div>
+            <div class="bg-slate-50 p-5 rounded-2xl dir-rtl">
+                <p class="text-xs font-black text-slate-400 uppercase mb-2">ملاحظة الاستراتيجية بالعربي</p>
+                <p class="text-sm leading-relaxed text-slate-700 font-semibold">${u.desc_ar}</p>
             </div>
             <div class="grid grid-cols-2 gap-4 text-[10px] font-black uppercase text-gray-400 tracking-wider">
-                <div class="bg-slate-50 p-3 rounded-xl">Local Rank: <span class="text-slate-900 ml-1">#${u.local}</span></div>
-                <div class="bg-slate-50 p-3 rounded-xl">Total Quota: <span class="text-slate-900 ml-1">${u.quota}</span></div>
+                <div class="bg-slate-100 p-3 rounded-xl">Local Rank: <span class="text-slate-900">#${u.local}</span></div>
+                <div class="bg-slate-100 p-3 rounded-xl">Quota: <span class="text-slate-900">${u.quota}</span></div>
             </div>
-            <a href="${u.url}" target="_blank" class="block w-full text-center bg-blue-600 text-white py-4 rounded-2xl font-black text-xs hover:bg-blue-700 transition">
-                VISIT OFFICIAL WEBSITE <i class="fas fa-external-link-alt ml-2"></i>
-            </a>
+            <a href="${u.url}" target="_blank" class="block w-full text-center bg-blue-600 text-white py-4 rounded-2xl font-black text-xs hover:bg-blue-700 transition">VISIT OFFICIAL WEBSITE</a>
         </div>
     `;
-    
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
+    modal.classList.remove('hidden'); modal.classList.add('flex');
 }
 
-function closeModal() {
-    const modal = document.getElementById('uniModal');
-    modal.classList.remove('flex');
-    modal.classList.add('hidden');
-}
+function closeModal() { document.getElementById('uniModal').classList.add('hidden'); }
 
-// SEARCH FILTER
 function filterCards() {
     const q = document.getElementById('searchInput').value.toLowerCase();
-    const filtered = universities.filter(u => 
-        u.name.toLowerCase().includes(q) || 
-        u.city.toLowerCase().includes(q) ||
-        u.desc.toLowerCase().includes(q)
-    );
+    const filtered = universities.filter(u => u.name.toLowerCase().includes(q) || u.city.toLowerCase().includes(q) || u.desc_ar.includes(q) || u.desc_en.toLowerCase().includes(q));
     renderCards(filtered);
 }
 
-// INITIALIZE
-document.addEventListener('DOMContentLoaded', () => {
-    renderCards(universities);
-
-    // Chart logic inside DOMContentLoaded 
-    const ctx = document.getElementById('rankChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['METU', 'ITU', 'Hacettepe', 'Boğaziçi', 'Ankara'],
-            datasets: [{
-                label: 'Global Rank Score',
-                data: [950, 920, 890, 850, 820],
-                backgroundColor: '#3b82f6',
-                borderRadius: 8,
-                barThickness: 30
-            }]
-        },
-        options: {
-            maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: { 
-                y: { display: false },
-                x: { grid: { display: false }, ticks: { font: { size: 10, weight: 'bold' } } }
-            }
-        }
-    });
-});
+document.addEventListener('DOMContentLoaded', () => { renderCards(universities); });
 </script>
-
 </body>
 </html>
